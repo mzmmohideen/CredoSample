@@ -1,0 +1,2 @@
+class CustomMiddleware:
+	pass

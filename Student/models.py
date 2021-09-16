@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+# Django model, provides ORM (Object Relational Mapping). an object mapped with DB. Can helps to create / alter DDL
+# field Types - https://docs.djangoproject.com/en/3.2/ref/models/fields/#field-types
 class StudentDetails(models.Model):
 	student_id = models.AutoField(primary_key=True)
 	student_name = models.CharField(max_length=100, null=False)
@@ -11,3 +13,6 @@ class StudentDetails(models.Model):
 
 	class Meta:
 		db_table = "student_details"
+
+	def __str__(self):
+		return self.student_name

@@ -1,9 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Student</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
 </head>
 <body>
-<marquee><h1>Student</h1></marquee>
+<!-- <marquee><h1>{{ name }}</h1></marquee> -->
+<table>
+	<thead>
+		<tr>
+			<th>Student Name</th>
+			<th>Student DOB</th>
+			<th>Department</th>
+			<th>Course</th>
+			<th>Year</th>
+		</tr>
+	</thead>
+	<tbody> 
+		{% for r in data %}
+		<tr>
+			<td> {{ r.student_name }} </td>
+			<td> {{ r.dob }} </td>
+			<td> {{ r.dept }} </td>
+			<td> {{ r.course }} </td>
+			<td> {{ r.year }} </td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<form class="form-2" id="login_data" method="post" action="/student/home/">
+    <h1 align="center">
+        <!-- <span style="color:blue"> SAAS </span> -->
+        <span class="log-in">Sign-in</span>
+    </h1>
+
+    <p class="float">
+        <label for="login"><i class="fa fa-user"></i>Username</label>
+        <input id="username" type="text" name="username" placeholder="Username">
+    </p>
+
+    <p class="float">
+        <label for="password"><i class="fa fa-lock"></i>Password</label>
+        <input id="password" type="password" name="password" placeholder="Password" class="showpassword">
+    </p>
+
+    <p class="clearfix">
+        <input id="btn_submit" type="submit" value="Log In">
+        <input id="btn_submit_reg" type="submit" value="Register">
+    </p>
+</form>
 </body>
 </html>

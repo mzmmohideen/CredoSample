@@ -21,4 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-# urlpatterns += student_urlpatterns
+urlpatterns += student_urlpatterns
